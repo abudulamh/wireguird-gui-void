@@ -1,0 +1,70 @@
+# Template file for 'wireguird'
+pkgname=wireguird
+version=1.1.0
+revision=1
+build_style=go
+go_import_path=github.com/UnnoTed/wireguird
+
+hostmakedepends="pkg-config"
+makedepends="
+ gtk+3-devel
+ libayatana-appindicator-devel
+"
+
+depends="
+ wireguard-tools
+ openresolv
+ polkit
+ gtk+3
+ libayatana-appindicator
+"
+
+short_desc="GTK GUI for WireGuard"
+maintainer="YOURNAME <your@email>"
+license="MIT"
+homepage="https://github.com/UnnoTed/wireguird"
+distfiles="https://github.com/UnnoTed/wireguird/archive/refs/tags/v${version}.tar.gz"
+checksum=653ed74a7fbf3a53d3bad5eca7856570419e9a23cb297f68125313bf5790dc98
+
+pre_build() {
+    go generate ./...
+}
+
+do_install() {
+    vmkdir opt/wireguird
+    
+    vinstall ${GOPATH}/bin/wireguird 755 opt/wireguird
+
+    if [ -d Icon ]; then
+        cp -a Icon ${DESTDIR}/opt/wireguird/
+    fi
+
+    cat > ${DESTDIR}/opt/wireguird/wireguird.settings <<'EOF'
+{
+  "MultipleTunnels": false,
+  "StartOnTray": false,
+  "CheckUpdates": false,
+  "Debug": false,
+  "RememberConnectedServers": false,
+  "ConnectedServers": {},
+  "CountryFlags": true,
+  "Passwordless": false
+}
+EOF
+}
+
+post_install() {
+    vinstall deb/usr/share/applications/wireguird.desktop \
+        644 usr/share/applications
+
+    vsed -i 's|^Exec=.*|Exec=pkexec /opt/wireguird/wireguird|' \
+        ${DESTDIR}/usr/share/applications/wireguird.desktop
+    
+    grep -q '^Categories=' ${DESTDIR}/usr/share/applications/wireguird.desktop || \
+        echo 'Categories=Network;Application;' >> ${DESTDIR}/usr/share/applications/wireguird.desktop
+
+    vinstall deb/usr/share/polkit-1/actions/wireguird.policy \
+        644 usr/share/polkit-1/actions
+        
+    vlicense LICENSE
+}
