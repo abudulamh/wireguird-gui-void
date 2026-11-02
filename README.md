@@ -33,6 +33,6 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
    cd void-packages
    ./xbps-src binary-bootstrap
 
-   2. Create the package directory and add the template:
+2. Create the package directory and add the template:
    ```bash
    mkdir -p srcpkgs/wireguird
