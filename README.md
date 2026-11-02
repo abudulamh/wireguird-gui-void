@@ -36,3 +36,28 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
 2. Create the package directory and add the template:
    ```bash
    mkdir -p srcpkgs/wireguird
+
+3. Copy the template file provided in this repository to the newly created directory:
+   ```bash
+   cp /path/to/this/repository/template srcpkgs/wireguird/template
+
+4. Build the package:
+   ```bash
+   ./xbps-src pkg wireguird
+
+5. Install your newly built package:
+   ```bash
+  sudo xbps-install --repository=hostdir/binpkgs -f wireguird
+
+
+
+
+
+
+
+
+
+
+
+
+   
