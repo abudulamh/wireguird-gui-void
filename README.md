@@ -22,3 +22,16 @@ WireGuird is a Linux GTK GUI client for WireGuard. It lists tunnels from `/etc/w
 2. Install the package locally using the following command (replace the path with your actual download path):
    ```bash
    sudo xbps-install -R /path/to/downloaded/file wireguird
+
+   ## Build from Source (Void Linux)
+
+If you prefer to build the package yourself using `xbps-src`, follow these steps:
+
+1. Clone the `void-packages` repository and set it up:
+   ```bash
+   git clone --depth 1 https://github.com/void-linux/void-packages.git
+   cd void-packages
+   ./xbps-src binary-bootstrap
+
+   2. Create the package directory and add the template:
+   mkdir -p srcpkgs/wireguird
