@@ -44,16 +44,3 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
 5. Install your newly built package:
    ```bash
    sudo xbps-install --repository=hostdir/binpkgs -f wireguird
-
-
-
-
-
-
-
-
-
-
-
-
-   
