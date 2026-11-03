@@ -66,6 +66,6 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
    Categories=Network;Application;
    X-GNOME-Autostart-enabled=true
    StartupNotify=false
-4. Make it actionable:
+4. Make the file executable:
    ```bash
    chmod +x ~/.config/autostart/wireguird.desktop
