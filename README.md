@@ -6,9 +6,11 @@ WireGuird is a Linux GTK GUI client for WireGuard. It lists tunnels from `/etc/w
 
 ## Screenshots
 
-| Main Interface | Edit Tunnel |
+| Main Interface | Edit Tunnel | Connected | Disconnect }
+| :---: | :---: |
 | :---: | :---: |
 | ![Main Interface](Screenshots/main_interface.jpg) | ![Edit Tunnel](Screenshots/edit_tunnel.jpg) |
+| ![Disconnect](Screenshots/disconnect.png) | ![Connected](Screenshots/connected.png) |
 
 ## Package Details
 * **Version:** 1.1.0
