@@ -45,7 +45,7 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
    ```bash
    sudo xbps-install --repository=hostdir/binpkgs -f wireguird
 
-   ## Start automatically on login (XFCE)
+## Start automatically on login (XFCE)
    
 1. Ensure the autostart directory exists:
    ```bash
@@ -53,7 +53,7 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
 2. Create a configuration file:
    ```bash  
    nano ~/.config/autostart/wireguird.desktop
-2. Populate the file details and save:
+3. Populate the file details and save:
    ```bash
    [Desktop Entry]
    Encoding=UTF-8
@@ -66,6 +66,6 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
    Categories=Network;Application;
    X-GNOME-Autostart-enabled=true
    StartupNotify=false
-2. Make it actionable:
+4. Make it actionable:
    ```bash
    chmod +x ~/.config/autostart/wireguird.desktop
