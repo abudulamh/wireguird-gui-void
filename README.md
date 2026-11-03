@@ -4,11 +4,11 @@ An `.xbps` package for [WireGuird](https://github.com/UnnoTed/wireguird), built 
 
 WireGuird is a Linux GTK GUI client for WireGuard. It lists tunnels from `/etc/wireguard` and controls Wireguard through `wg-quick`.
 
-## Screenshots
+### Screenshots
 
-| Main Interface | Edit Tunnel |
-| :---: | :---: |
-| ![Main Interface](Screenshots/main_interface.jpg) | ![Edit Tunnel](Screenshots/edit_tunnel.jpg) |
+| Main Interface | Edit Tunnel | Connected | Disconnect |
+| :---: | :---: | :---: | :---: |
+| ![Main Interface](Screenshots/main_interface.jpg) | ![Edit Tunnel](Screenshots/edit_tunnel.jpg) | ![Connected](Screenshots/connected.png) | ![Disconnect](Screenshots/disconnect.png) |
 
 ## Package Details
 * **Version:** 1.1.0
