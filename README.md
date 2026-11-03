@@ -44,3 +44,28 @@ If you prefer to build the package yourself using `xbps-src`, follow these steps
 5. Install your newly built package:
    ```bash
    sudo xbps-install --repository=hostdir/binpkgs -f wireguird
+
+   ## Start automatically on login (XFCE)
+   
+1. Ensure the autostart directory exists:
+   ```bash
+   mkdir -p ~/.config/autostart
+2. Create a configuration file:
+   ```bash  
+   nano ~/.config/autostart/wireguird.desktop
+2. Populate the file details and save:
+   ```bash
+   [Desktop Entry]
+   Encoding=UTF-8
+   Version=1.1
+   Type=Application
+   Terminal=false
+   Exec=sh -c "sleep 5 && pkexec /opt/wireguird/wireguird"
+   Name=Wireguird
+   Icon=/opt/wireguird/Icon/128x128/wireguard.png
+   Categories=Network;Application;
+   X-GNOME-Autostart-enabled=true
+   StartupNotify=false
+2. Make it actionable:
+   ```bash
+   chmod +x ~/.config/autostart/wireguird.desktop
